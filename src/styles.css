@@ -1,3 +1,14 @@
-.App {
+body {
   font-family: sans-serif;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }

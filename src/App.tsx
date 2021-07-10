@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Pokemon, getAll, getByName } from "./API";
 
 import "./styles.css";
@@ -40,15 +40,23 @@ const PokemonTable: React.FunctionComponent<{
 };
 
 export default function App() {
-  const [pokemon, setPokemon] = useState<Pokemon[]>([]);
-
-  useEffect(() => {
-    getByName("bu").then(setPokemon);
-  }, []);
-
   return (
-    <div className="App">
-      <PokemonTable pokemon={pokemon} />
+    <div>
+      <div className="top-bar">
+        <div>Search</div>
+        <input type="text"></input>
+        <div>Power threshold</div>
+        <input type="text"></input>
+        <div>Count over threshold: </div>
+      </div>
+      <div className="two-column">
+        <PokemonTable pokemon={[]} />
+        <div>
+          <div>Min: </div>
+          <div>Max: </div>
+          <div>Avg: </div>
+        </div>
+      </div>
     </div>
   );
 }
