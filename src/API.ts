@@ -15,9 +15,10 @@ export async function getAll(): Promise<Pokemon[]> {
 }
 
 export async function getByName(search: string): Promise<Pokemon[]> {
+  const lcSearch = search.toLowerCase();
   return fetch("/pokemon.json")
     .then((resp) => resp.json())
     .then((pokemon: Pokemon[]) =>
-      pokemon.filter(({ name }) => name.toLowerCase().includes(search))
+      pokemon.filter(({ name }) => name.toLowerCase().includes(lcSearch))
     );
 }
