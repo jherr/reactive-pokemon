@@ -58,7 +58,6 @@ export default function App() {
         <div>
           <div>Min: </div>
           <div>Max: </div>
-          <div>Avg: </div>
         </div>
       </div>
     </div>
